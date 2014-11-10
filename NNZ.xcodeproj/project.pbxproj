@@ -15,6 +15,18 @@
 		E3C1D3911A093BDD00A60692 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3C1D3901A093BDD00A60692 /* Images.xcassets */; };
 		E3C1D3941A093BDD00A60692 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C1D3921A093BDD00A60692 /* LaunchScreen.xib */; };
 		E3C1D3A01A093BDD00A60692 /* NNZTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C1D39F1A093BDD00A60692 /* NNZTests.m */; };
+		E3C1D3AA1A0A4C4D00A60692 /* NNZ.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3C1D3A91A0A4C4D00A60692 /* NNZ.plist */; };
+		E3DAADCA1A105AE2002A792C /* jal_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DAADC91A105AE2002A792C /* jal_logo.png */; };
+		E3DAADCD1A105D8F002A792C /* VersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADCC1A105D8F002A792C /* VersionViewController.m */; };
+		E3DAADD61A10653E002A792C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DAADD51A10653E002A792C /* CoreLocation.framework */; };
+		E3DAADD91A10BD75002A792C /* LicenseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADD81A10BD75002A792C /* LicenseTableViewController.m */; };
+		E3DAADDC1A10C2E8002A792C /* IntervalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADDB1A10C2E8002A792C /* IntervalTableViewController.m */; };
+		E3DAADDF1A10C2FF002A792C /* AccuracyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADDE1A10C2FF002A792C /* AccuracyTableViewController.m */; };
+		E3DAADE41A10E296002A792C /* CommunicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADE31A10E296002A792C /* CommunicationViewController.m */; };
+		E3DAADE71A10ECD2002A792C /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADE61A10ECD2002A792C /* SettingTableViewController.m */; };
+		E3DAADE91A10FB2B002A792C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3DAADE81A10FB2B002A792C /* Settings.bundle */; };
+		E3DAADEC1A10FFEF002A792C /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADEB1A10FFEF002A792C /* XMLParser.m */; };
+		E3DAADEF1A110397002A792C /* FlightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADEE1A110397002A792C /* FlightTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +54,26 @@
 		E3C1D3991A093BDD00A60692 /* NNZTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNZTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C1D39E1A093BDD00A60692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3C1D39F1A093BDD00A60692 /* NNZTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNZTests.m; sourceTree = "<group>"; };
+		E3C1D3A91A0A4C4D00A60692 /* NNZ.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NNZ.plist; sourceTree = "<group>"; };
+		E3DAADC91A105AE2002A792C /* jal_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jal_logo.png; sourceTree = SOURCE_ROOT; };
+		E3DAADCB1A105D8F002A792C /* VersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionViewController.h; sourceTree = "<group>"; };
+		E3DAADCC1A105D8F002A792C /* VersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionViewController.m; sourceTree = "<group>"; };
+		E3DAADD51A10653E002A792C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E3DAADD71A10BD75002A792C /* LicenseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicenseTableViewController.h; sourceTree = "<group>"; };
+		E3DAADD81A10BD75002A792C /* LicenseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicenseTableViewController.m; sourceTree = "<group>"; };
+		E3DAADDA1A10C2E8002A792C /* IntervalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntervalTableViewController.h; sourceTree = "<group>"; };
+		E3DAADDB1A10C2E8002A792C /* IntervalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntervalTableViewController.m; sourceTree = "<group>"; };
+		E3DAADDD1A10C2FF002A792C /* AccuracyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccuracyTableViewController.h; sourceTree = "<group>"; };
+		E3DAADDE1A10C2FF002A792C /* AccuracyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccuracyTableViewController.m; sourceTree = "<group>"; };
+		E3DAADE21A10E296002A792C /* CommunicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationViewController.h; sourceTree = "<group>"; };
+		E3DAADE31A10E296002A792C /* CommunicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationViewController.m; sourceTree = "<group>"; };
+		E3DAADE51A10ECD2002A792C /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
+		E3DAADE61A10ECD2002A792C /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		E3DAADE81A10FB2B002A792C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		E3DAADEA1A10FFEF002A792C /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		E3DAADEB1A10FFEF002A792C /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		E3DAADED1A110397002A792C /* FlightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightTableViewController.h; sourceTree = "<group>"; };
+		E3DAADEE1A110397002A792C /* FlightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3DAADD61A10653E002A792C /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +98,7 @@
 		E3C1D3741A093BDD00A60692 = {
 			isa = PBXGroup;
 			children = (
+				E3DAADD51A10653E002A792C /* CoreLocation.framework */,
 				E3C1D37F1A093BDD00A60692 /* NNZ */,
 				E3C1D39C1A093BDD00A60692 /* NNZTests */,
 				E3C1D37E1A093BDD00A60692 /* Products */,
@@ -87,6 +121,9 @@
 				E3C1D3851A093BDD00A60692 /* AppDelegate.m */,
 				E3C1D38A1A093BDD00A60692 /* ViewController.h */,
 				E3C1D38B1A093BDD00A60692 /* ViewController.m */,
+				E3DAADE11A10D8CE002A792C /* FunctionView */,
+				E3DAADEA1A10FFEF002A792C /* XMLParser.h */,
+				E3DAADEB1A10FFEF002A792C /* XMLParser.m */,
 				E3C1D38D1A093BDD00A60692 /* Main.storyboard */,
 				E3C1D3901A093BDD00A60692 /* Images.xcassets */,
 				E3C1D3921A093BDD00A60692 /* LaunchScreen.xib */,
@@ -99,8 +136,11 @@
 		E3C1D3801A093BDD00A60692 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E3DAADE81A10FB2B002A792C /* Settings.bundle */,
+				E3DAADC91A105AE2002A792C /* jal_logo.png */,
 				E3C1D3811A093BDD00A60692 /* Info.plist */,
 				E3C1D3821A093BDD00A60692 /* main.m */,
+				E3C1D3A91A0A4C4D00A60692 /* NNZ.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -120,6 +160,35 @@
 				E3C1D39E1A093BDD00A60692 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3DAADE01A10D8A4002A792C /* SettingTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E3DAADD71A10BD75002A792C /* LicenseTableViewController.h */,
+				E3DAADD81A10BD75002A792C /* LicenseTableViewController.m */,
+				E3DAADED1A110397002A792C /* FlightTableViewController.h */,
+				E3DAADEE1A110397002A792C /* FlightTableViewController.m */,
+				E3DAADDA1A10C2E8002A792C /* IntervalTableViewController.h */,
+				E3DAADDB1A10C2E8002A792C /* IntervalTableViewController.m */,
+				E3DAADDD1A10C2FF002A792C /* AccuracyTableViewController.h */,
+				E3DAADDE1A10C2FF002A792C /* AccuracyTableViewController.m */,
+			);
+			name = SettingTableView;
+			sourceTree = "<group>";
+		};
+		E3DAADE11A10D8CE002A792C /* FunctionView */ = {
+			isa = PBXGroup;
+			children = (
+				E3DAADCB1A105D8F002A792C /* VersionViewController.h */,
+				E3DAADCC1A105D8F002A792C /* VersionViewController.m */,
+				E3DAADE51A10ECD2002A792C /* SettingTableViewController.h */,
+				E3DAADE61A10ECD2002A792C /* SettingTableViewController.m */,
+				E3DAADE01A10D8A4002A792C /* SettingTableView */,
+				E3DAADE21A10E296002A792C /* CommunicationViewController.h */,
+				E3DAADE31A10E296002A792C /* CommunicationViewController.m */,
+			);
+			name = FunctionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,8 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C1D38F1A093BDD00A60692 /* Main.storyboard in Resources */,
+				E3C1D3AA1A0A4C4D00A60692 /* NNZ.plist in Resources */,
 				E3C1D3941A093BDD00A60692 /* LaunchScreen.xib in Resources */,
 				E3C1D3911A093BDD00A60692 /* Images.xcassets in Resources */,
+				E3DAADE91A10FB2B002A792C /* Settings.bundle in Resources */,
+				E3DAADCA1A105AE2002A792C /* jal_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,9 +294,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3DAADEC1A10FFEF002A792C /* XMLParser.m in Sources */,
 				E3C1D3861A093BDD00A60692 /* AppDelegate.m in Sources */,
+				E3DAADDF1A10C2FF002A792C /* AccuracyTableViewController.m in Sources */,
+				E3DAADCD1A105D8F002A792C /* VersionViewController.m in Sources */,
 				E3C1D3831A093BDD00A60692 /* main.m in Sources */,
+				E3DAADE71A10ECD2002A792C /* SettingTableViewController.m in Sources */,
+				E3DAADDC1A10C2E8002A792C /* IntervalTableViewController.m in Sources */,
+				E3DAADEF1A110397002A792C /* FlightTableViewController.m in Sources */,
 				E3C1D38C1A093BDD00A60692 /* ViewController.m in Sources */,
+				E3DAADE41A10E296002A792C /* CommunicationViewController.m in Sources */,
+				E3DAADD91A10BD75002A792C /* LicenseTableViewController.m in Sources */,
 				E3C1D3891A093BDD00A60692 /* NNZ.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,8 +430,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NNZ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -360,8 +442,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NNZ/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -418,6 +502,7 @@
 				E3C1D3A51A093BDD00A60692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3C1D3A61A093BDD00A60692 /* Build configuration list for PBXNativeTarget "NNZTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +511,7 @@
 				E3C1D3A81A093BDD00A60692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
