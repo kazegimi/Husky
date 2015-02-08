@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <UIWebViewDelegate, CLLocationManagerDelegate, UIPopoverControllerDelegate>
+#import "Uploader.h"
+#import "Deleter.h"
 
+@interface ViewController : UIViewController <UIWebViewDelegate, CLLocationManagerDelegate, UIPopoverControllerDelegate, UploaderDelegate, DeleterDelegate>
+
+@property (nonatomic, retain) NSTimer *timer;
 
 @end
 

@@ -1,36 +1,37 @@
 //
-//  IntervalTableViewController.m
+//  DistanceFilterTableViewController.m
 //  NNZ
 //
-//  Created by 林 英市 on 2014/11/10.
+//  Created by 林 英市 on 2014/12/16.
 //  Copyright (c) 2014年 skyElements. All rights reserved.
 //
 
-#import "IntervalTableViewController.h"
+#import "DistanceFilterTableViewController.h"
 
-@interface IntervalTableViewController ()
+@interface DistanceFilterTableViewController ()
 
 @end
 
-@implementation IntervalTableViewController
+@implementation DistanceFilterTableViewController
 {
-    NSArray *intervalsArray;
+    NSArray *distancesArray;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"自動更新間隔選択";
+    self.title = @"位置情報送信間隔選択";
     
     self.tableView.rowHeight = 66;
     
-    intervalsArray = [NSArray arrayWithObjects:@"-1", @"10", @"15", @"30", @"60", @"300", @"600", @"900", nil];
+    distancesArray = [NSArray arrayWithObjects:@"-1", @"10", @"50", @"100", @"500", nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -42,12 +43,12 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"マップ上の位置情報を最新の状態に自動更新する時間間隔を設定します。時間が短ければ短いほど、より多くのバッテリーを消費します。";
+    return @"位置情報を自動的に送信する距離間隔を設定します。設定した距離を移動するごとに、新しい位置情報を送信します。距離が短ければ短いほど、より多くのバッテリーを消費します。";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return intervalsArray.count;
+    return distancesArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,26 +62,23 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
     }
     
-    NSString *intervalString;
-    if ([intervalsArray[indexPath.row] integerValue] == -1)
+    NSString *distanceString;
+    if ([distancesArray[indexPath.row] integerValue] == -1)
     {
-        intervalString = @"自動更新なし";
-    }else if ([intervalsArray[indexPath.row] integerValue] / 60 == 0)
+        distanceString = @"指定なし";
+    }else
     {
-        intervalString = [NSString stringWithFormat:@"%ld秒", (long)([intervalsArray[indexPath.row] integerValue] % 60)];
-    }else if ([intervalsArray[indexPath.row] integerValue] / 60 != 0)
-    {
-        intervalString = [NSString stringWithFormat:@"%ld分", (long)([intervalsArray[indexPath.row] integerValue] / 60)];
+        distanceString = [NSString stringWithFormat:@"%@m", distancesArray[indexPath.row]];
     }
     
-    cell.textLabel.text = intervalString;
+    cell.textLabel.text = distanceString;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[NSUserDefaults standardUserDefaults] setInteger:[intervalsArray[indexPath.row] integerValue] forKey:@"interval"];
+    [[NSUserDefaults standardUserDefaults] setInteger:[distancesArray[indexPath.row] integerValue] forKey:@"distance_filter"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];

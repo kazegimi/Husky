@@ -7,16 +7,51 @@
 //
 
 #import "AppDelegate.h"
+#import "Uploader.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+{
+    CLLocationManager *locationManager;
+    Uploader *uploader;
+}
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // sleep modeの無効化
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
+    // アプリケーションが起動するたびに、デバイストークンを要求してそれをプロバイダに渡すことで、
+    // プロバイダが最新のデバイストークンを持つことを保証
+    // メソッドの有無でOSを判別
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)])
+    {
+        //iOS8
+        //デバイストークの取得
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        
+        //許可アラートの表示
+        UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }else
+    {
+        /*
+        //iOS7
+        UIRemoteNotificationType types = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert| UIRemoteNotificationTypeSound;
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
+        */
+    }
+    
+    // Background実行の要求
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    uploader = [[Uploader alloc] init];
+    
     return YES;
 }
 
@@ -25,9 +60,9 @@
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -42,6 +77,95 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+#pragma mark - Background処理
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
+{
+    completionHandler(UIBackgroundFetchResultNoData);
+}
+
+#pragma mark - Push Notification
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken
+{
+    NSString *dev_token = [[[[devToken description]
+                             stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                            stringByReplacingOccurrencesOfString: @">" withString: @""]
+                           stringByReplacingOccurrencesOfString: @" " withString: @""];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:dev_token forKey:@"dev_token"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"Errorinregistration.Error:%@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    if ([userInfo[@"id"] integerValue] == 0)
+    {
+        // 新規メッセージプッシュ
+        // [UIApplication sharedApplication].applicationIconBadgeNumber++;
+        
+        NSNotification *notification = [NSNotification notificationWithName:@"pushNotification" object:self userInfo:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
+    }else if ([userInfo[@"id"] integerValue] == 1)
+    {
+        // 位置情報更新リクエストプッシュ
+        [uploader upload];
+        
+        // [UIApplication sharedApplication].applicationIconBadgeNumber++;
+        
+        /*
+        if([CLLocationManager locationServicesEnabled])
+        {
+            // イベントを受け取るインスタンス
+            //locationManager.delegate = self;
+            // イベントを発生させる最小の距離（デフォルトは距離指定なし）
+            //locationManager.distanceFilter = kCLDistanceFilterNone;
+            // 精度 (デフォルトはBest)
+            if ([[NSUserDefaults standardUserDefaults] integerForKey:@"accuracy"])
+            {
+                locationManager.desiredAccuracy = [[NSUserDefaults standardUserDefaults] integerForKey:@"accuracy"];
+            }else
+            {
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+                [[NSUserDefaults standardUserDefaults] setInteger:kCLLocationAccuracyBest forKey:@"accuracy"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            }
+            // 測位開始
+            [locationManager startUpdatingLocation];
+            
+            CLLocation *location = [locationManager location];
+            
+            [[NSUserDefaults standardUserDefaults] setFloat:location.coordinate.latitude forKey:@"lat"];
+            [[NSUserDefaults standardUserDefaults] setFloat:location.coordinate.longitude forKey:@"lon"];
+            
+            NSDate *date = locationManager.location.timestamp;
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+            [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Tokyo"]];
+            NSString *timestamp = [formatter stringFromDate:date];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:timestamp forKey:@"timestamp"];
+            
+            [[NSUserDefaults standardUserDefaults] synchronize];
+
+            [updater update];
+            
+            [locationManager stopUpdatingLocation];
+        }else
+        {
+            // 端末でロケーションサービスが利用できない場合
+        }
+        */
+    }
+
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 
 #pragma mark - Core Data stack

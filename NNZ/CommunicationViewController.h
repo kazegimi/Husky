@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CommunicationViewController : UIViewController
+#import "ThreadTableViewController.h"
+
+@interface CommunicationViewController : UIViewController <ThreadTableViewControllerDelegate>
 
 @end

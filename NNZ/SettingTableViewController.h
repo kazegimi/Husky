@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingTableViewController : UITableViewController
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
+
+@interface SettingTableViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 
 @end

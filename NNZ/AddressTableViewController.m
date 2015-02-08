@@ -1,31 +1,35 @@
 //
-//  AccuracyTableViewController.m
+//  AddressTableViewController.m
 //  NNZ
 //
-//  Created by 林 英市 on 2014/11/10.
+//  Created by 林 英市 on 2014/12/31.
 //  Copyright (c) 2014年 skyElements. All rights reserved.
 //
 
-#import "AccuracyTableViewController.h"
+#import "AddressTableViewController.h"
 
-@interface AccuracyTableViewController ()
+@interface AddressTableViewController ()
 
 @end
 
-@implementation AccuracyTableViewController
+@implementation AddressTableViewController
 {
-    NSArray *accuraciesArray;
+    NSArray *mailAddressesList;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"GPS精度選択";
+    self.title = @"メールアドレスリスト";
     
     self.tableView.rowHeight = 66;
-    
-    accuraciesArray = [NSArray arrayWithObjects:@"-1", @"10", @"100", @"1000", @"3000", nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    mailAddressesList = [[NSUserDefaults standardUserDefaults] objectForKey:@"mailAddressesList"];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,12 +46,12 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"使用するGPSの精度を設定します。精度が高ければ高いほど、より多くのバッテリーを消費します。";
+    return @"以下に表示されている相手には、iMessageおよびFaceTimeを利用して位置情報から直接コンタクトを取ることができます。";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return accuraciesArray.count;
+    return mailAddressesList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,27 +65,20 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
     }
     
-    NSString *accuracyString;
-    if ([accuraciesArray[indexPath.row] integerValue] == -1)
-    {
-        accuracyString = @"最高";
-    }else
-    {
-        accuracyString = [NSString stringWithFormat:@"%@m", accuraciesArray[indexPath.row]];
-    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    cell.textLabel.text = accuracyString;
+    cell.textLabel.text = mailAddressesList[indexPath.row][@"employee_number"];
+    cell.detailTextLabel.text = mailAddressesList[indexPath.row][@"mail_address"];
     
     return cell;
 }
 
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[NSUserDefaults standardUserDefaults] setInteger:[accuraciesArray[indexPath.row] integerValue] forKey:@"accuracy"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
+*/
 
 @end
