@@ -631,7 +631,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				PRODUCT_NAME = NNZ;
-				PROVISIONING_PROFILE = "68628c40-7c0c-4216-8932-b7b76ae676d6";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -646,7 +646,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				PRODUCT_NAME = NNZ;
-				PROVISIONING_PROFILE = "68628c40-7c0c-4216-8932-b7b76ae676d6";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
