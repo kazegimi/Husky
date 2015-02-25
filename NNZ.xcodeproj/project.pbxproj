@@ -91,20 +91,20 @@
 		E33676121A1DD47F009E7642 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		E36960261A29E9A200DC654F /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
 		E36960271A29E9A200DC654F /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
-		E39E3CD61A31A049002914C3 /* jal_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jal_logo.png; path = ../../../../../Desktop/iADS/jal_logo.png; sourceTree = "<group>"; };
-		E39E3CD81A31E55E002914C3 /* com.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = com.png; path = ../../../../../Desktop/iADS/com.png; sourceTree = "<group>"; };
-		E39E3CDA1A31E55E002914C3 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = ../../../../../Desktop/iADS/setting.png; sourceTree = "<group>"; };
+		E39E3CD61A31A049002914C3 /* jal_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jal_logo.png; path = ../img/jal_logo.png; sourceTree = "<group>"; };
+		E39E3CD81A31E55E002914C3 /* com.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = com.png; path = ../img/com.png; sourceTree = "<group>"; };
+		E39E3CDA1A31E55E002914C3 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = ../img/setting.png; sourceTree = "<group>"; };
 		E39E3CE01A31E8E4002914C3 /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
 		E39E3CE11A31E8E4002914C3 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
 		E39E3CE31A31E944002914C3 /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
 		E39E3CE41A31E944002914C3 /* ListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewCell.m; sourceTree = "<group>"; };
-		E39E3CE71A31EBCC002914C3 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = ../../../../../Desktop/iADS/list.png; sourceTree = "<group>"; };
-		E39E3CEB1A31FCF0002914C3 /* filter_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter_blue.png; path = ../../../../../Desktop/iADS/filter_blue.png; sourceTree = "<group>"; };
-		E39E3CEC1A31FCF0002914C3 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = ../../../../../Desktop/iADS/filter.png; sourceTree = "<group>"; };
-		E39E3CEF1A31FD93002914C3 /* update_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = update_blue.png; path = ../../../../../Desktop/iADS/update_blue.png; sourceTree = "<group>"; };
-		E39E3CF01A31FD93002914C3 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = update.png; path = ../../../../../Desktop/iADS/update.png; sourceTree = "<group>"; };
-		E39E3CF51A3201A1002914C3 /* husky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = husky.png; path = ../../../../../Desktop/iADS/husky.png; sourceTree = "<group>"; };
-		E3AB031A1A81EAA90009EC83 /* husky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = husky.jpg; path = ../../../../../Desktop/iADS/husky.jpg; sourceTree = "<group>"; };
+		E39E3CE71A31EBCC002914C3 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = ../img/list.png; sourceTree = "<group>"; };
+		E39E3CEB1A31FCF0002914C3 /* filter_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter_blue.png; path = ../img/filter_blue.png; sourceTree = "<group>"; };
+		E39E3CEC1A31FCF0002914C3 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = ../img/filter.png; sourceTree = "<group>"; };
+		E39E3CEF1A31FD93002914C3 /* update_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = update_blue.png; path = ../img/update_blue.png; sourceTree = "<group>"; };
+		E39E3CF01A31FD93002914C3 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = update.png; path = ../img/update.png; sourceTree = "<group>"; };
+		E39E3CF51A3201A1002914C3 /* husky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = husky.png; path = ../img/husky.png; sourceTree = "<group>"; };
+		E3AB031A1A81EAA90009EC83 /* husky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = husky.jpg; path = ../img/husky.jpg; sourceTree = "<group>"; };
 		E3BE080F1A3E892600B129F6 /* Uploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Uploader.h; sourceTree = "<group>"; };
 		E3BE08101A3E892700B129F6 /* Uploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Uploader.m; sourceTree = "<group>"; };
 		E3BE08151A3EC26E00B129F6 /* DateStringGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateStringGenerator.h; sourceTree = "<group>"; };
@@ -152,9 +152,9 @@
 		E3DAADEE1A110397002A792C /* FlightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightTableViewController.m; sourceTree = "<group>"; };
 		E3DAADF01A1195EE002A792C /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
 		E3DAADF11A1195EE002A792C /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
-		E3DD46061A39470100E24152 /* yahoo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "yahoo@2x.png"; path = "../../../../../Desktop/iADS/yahoo@2x.png"; sourceTree = "<group>"; };
-		E3DD46081A394F4B00E24152 /* syutoko@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "syutoko@2x.png"; path = "../../../../../Desktop/iADS/syutoko@2x.png"; sourceTree = "<group>"; };
-		E3DD460A1A39551B00E24152 /* ihighway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ihighway@2x.png"; path = "../../../../../Desktop/iADS/ihighway@2x.png"; sourceTree = "<group>"; };
+		E3DD46061A39470100E24152 /* yahoo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "yahoo@2x.png"; path = "../img/yahoo@2x.png"; sourceTree = "<group>"; };
+		E3DD46081A394F4B00E24152 /* syutoko@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "syutoko@2x.png"; path = "../img/syutoko@2x.png"; sourceTree = "<group>"; };
+		E3DD460A1A39551B00E24152 /* ihighway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ihighway@2x.png"; path = "../img/ihighway@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -627,7 +627,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NNZ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				PRODUCT_NAME = NNZ;
@@ -642,7 +642,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NNZ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				PRODUCT_NAME = NNZ;

@@ -31,7 +31,7 @@
     [super viewDidLoad];
     
     textView = [[UITextView alloc] init];
-    textView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    textView.frame = CGRectMake(0, 0, self.navigationController.view.frame.size.width, self.navigationController.view.frame.size.height);
     textView.backgroundColor = [UIColor whiteColor];
     textView.editable = NO;
     textView.font = [UIFont systemFontOfSize:20];

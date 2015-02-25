@@ -146,7 +146,7 @@
                       [mutableString isEqualToString:@"99900028"] ||
                       [mutableString isEqualToString:@"99900029"])
             {
-                NSString *string = [NSString stringWithFormat:@"NRT乗員サポート部NNZ%@", [mutableString substringWithRange:NSMakeRange(7, 1)]];
+                NSString *string = [NSString stringWithFormat:@"NRT乗員サポート部%@", [mutableString substringWithRange:NSMakeRange(7, 1)]];
                 mutableString = [NSMutableString stringWithString:string];
             }
             

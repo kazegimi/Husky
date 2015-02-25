@@ -50,7 +50,7 @@
     [self.view addSubview:messageViewController.view];
     
     messageViewsArray = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 11; i++)
+    for (int i = 0; i < 9; i++)
     {
         MessageView *messageView = [[MessageView alloc] initWithFrame:CGRectMake(0, 0, messageViewController.view.frame.size.width, messageViewController.view.frame.size.height)];
         messageView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
@@ -177,7 +177,7 @@
         NSInteger threadID = [communication[@"thread_id"] integerValue];
         MessageView *messageView = messageViewsArray[threadID];
         
-        if (threadID == 10)
+        if (threadID == 8)
         {
             if ([communication[@"receiver"] isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"flight"]])
             {

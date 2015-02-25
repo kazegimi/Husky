@@ -112,7 +112,7 @@
             break;
             
         case 3:
-            return 4;
+            return 2;
             break;
             
         case 4:
@@ -202,27 +202,14 @@
             switch (indexPath.row)
             {
                 case 0:
-                    cell.textLabel.text = @"首都高速";
-                    //cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"syutoko.png"]];
+                    cell.textLabel.text = @"高速道路";
                     cell.threadID = 6;
                     break;
                     
                 case 1:
-                    cell.textLabel.text = @"その他高速道路";
-                    //cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ihighway.png"]];
+                    cell.textLabel.text = @"鉄道";
+                    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yahoo.png"]];
                     cell.threadID = 7;
-                    break;
-                    
-                case 2:
-                    cell.textLabel.text = @"JR";
-                    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yahoo.png"]];
-                    cell.threadID = 8;
-                    break;
-                    
-                case 3:
-                    cell.textLabel.text = @"私鉄";
-                    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yahoo.png"]];
-                    cell.threadID = 9;
                     break;
                 
                 default:
@@ -232,7 +219,7 @@
             
         case 4:
             cell.textLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"flight"];
-            cell.threadID = 10;
+            cell.threadID = 8;
             break;
             
         default:

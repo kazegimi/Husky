@@ -77,7 +77,7 @@
     
     NSString *sender = [[NSUserDefaults standardUserDefaults] objectForKey:@"employee_number"];
     NSString *receiver = @"";
-    if (threadID == 10) receiver = [[NSUserDefaults standardUserDefaults] objectForKey:@"flight"];
+    if (threadID == 8) receiver = [[NSUserDefaults standardUserDefaults] objectForKey:@"flight"];
     NSString *message = messageTextField.text;
     float lat = [[NSUserDefaults standardUserDefaults] floatForKey:@"lat"];
     float lon = [[NSUserDefaults standardUserDefaults] floatForKey:@"lon"];
@@ -140,7 +140,7 @@
     [request setHTTPMethod:@"POST"];
     
     NSString *receiver = @"";
-    if (threadID == 10) receiver = [[NSUserDefaults standardUserDefaults] objectForKey:@"flight"];
+    if (threadID == 8) receiver = [[NSUserDefaults standardUserDefaults] objectForKey:@"flight"];
     NSString *dev_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"dev_token"];
     
     NSString *parameters = [NSString stringWithFormat:@"receiver=%@&dev_token=%@", receiver, dev_token];

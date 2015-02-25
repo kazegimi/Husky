@@ -107,7 +107,7 @@
         cell = [[MessageTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.width = self.tableView.frame.size.width;
     cell.employee_number = [[NSUserDefaults standardUserDefaults] objectForKey:@"employee_number"];
