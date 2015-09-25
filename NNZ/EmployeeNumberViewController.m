@@ -148,6 +148,19 @@
             {
                 NSString *string = [NSString stringWithFormat:@"NRT乗員サポート部%@", [mutableString substringWithRange:NSMakeRange(7, 1)]];
                 mutableString = [NSMutableString stringWithString:string];
+            }else if ([mutableString isEqualToString:@"99900100"] ||
+                      [mutableString isEqualToString:@"99900101"] ||
+                      [mutableString isEqualToString:@"99900102"] ||
+                      [mutableString isEqualToString:@"99900103"] ||
+                      [mutableString isEqualToString:@"99900104"] ||
+                      [mutableString isEqualToString:@"99900105"] ||
+                      [mutableString isEqualToString:@"99900106"] ||
+                      [mutableString isEqualToString:@"99900107"] ||
+                      [mutableString isEqualToString:@"99900108"] ||
+                      [mutableString isEqualToString:@"99900109"])
+            {
+                NSString *string = [NSString stringWithFormat:@"NRT客室乗務員サポート部%@", [mutableString substringWithRange:NSMakeRange(7, 1)]];
+                mutableString = [NSMutableString stringWithString:string];
             }
             
             [[NSUserDefaults standardUserDefaults] setObject:mutableString forKey:@"_employee_number"];

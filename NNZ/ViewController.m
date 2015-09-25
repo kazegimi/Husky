@@ -135,7 +135,7 @@
     [functionView addSubview:settingButton];
     
     settingTableViewController = [[SettingTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    settingTableViewController.preferredContentSize = CGSizeMake(settingTableViewController.preferredContentSize.width, self.view.frame.size.height);
+    settingTableViewController.preferredContentSize = CGSizeMake(settingTableViewController.preferredContentSize.width, 1024);
     UINavigationController *settingNavigationController = [[UINavigationController alloc] initWithRootViewController:settingTableViewController];
     settingNavigationController.preferredContentSize = settingTableViewController.preferredContentSize;
     settingPopoverController = [[UIPopoverController alloc] initWithContentViewController:settingNavigationController];
@@ -195,7 +195,7 @@
     [communicationButton addGestureRecognizer:communicationButtonLongPress];
     
     communicationViewController = [[CommunicationViewController alloc] init];
-    communicationViewController.preferredContentSize = CGSizeMake(670, self.view.frame.size.height);
+    communicationViewController.preferredContentSize = CGSizeMake(670, 1024);
     communicationPopoverController = [[UIPopoverController alloc] initWithContentViewController:communicationViewController];
     communicationPopoverController.popoverLayoutMargins = UIEdgeInsetsMake(22, 10, 22, 10);
     communicationPopoverController.delegate = self;
@@ -208,7 +208,7 @@
     [functionView addSubview:listButton];
     
     listViewController = [[ListViewController alloc] init];
-    listViewController.preferredContentSize = CGSizeMake(670, self.view.frame.size.height);
+    listViewController.preferredContentSize = CGSizeMake(670, 1024);
     listPopoverController = [[UIPopoverController alloc] initWithContentViewController:listViewController];
     listPopoverController.popoverLayoutMargins = UIEdgeInsetsMake(22, 10, 22, 10);
     listPopoverController.delegate = self;

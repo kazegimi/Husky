@@ -127,7 +127,7 @@
     switch (section)
     {
         case 0:
-            return @"プライバシースイッチをオンにすると、位置情報の送信ならびにプッシュ通知の受信を開始します。";
+            return @"位置情報送信スイッチをオンにすると、位置情報の送信ならびにプッシュ通知の受信を開始します。";
             break;
             
         case 1:
@@ -236,7 +236,7 @@
             switch (indexPath.row)
         {
             case 0:
-                cell.textLabel.text = @"プライバシースイッチ";
+                cell.textLabel.text = @"位置情報送信スイッチ";
                 cell.accessoryView = privacySwitch;
                 privacySwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"privacySwitch"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -407,7 +407,7 @@
         {
             case 0:
                 cell.textLabel.text = @"Husky";
-                cell.detailTextLabel.text = @"Version 1.0.21";
+                cell.detailTextLabel.text = @"Version 1.0.5";
                 cell.imageView.image = [UIImage imageNamed:@"husky.png"];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 //cell.selectionStyle = UITableViewCellSelectionStyleNone;
