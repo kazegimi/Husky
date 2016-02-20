@@ -9,7 +9,6 @@
 #import "SettingTableViewController.h"
 #import "SettingTableViewCell.h"
 
-#import "FlightTableViewController.h"
 #import "CategoryTableViewController.h"
 #import "IntervalTableViewController.h"
 #import "DistanceFilterTableViewController.h"
@@ -27,7 +26,6 @@
 {
     UISwitch *privacySwitch;
     
-    FlightTableViewController *flightTableViewController;
     CategoryTableViewController *categoryTableViewController;
     IntervalTableViewController *intervalTableViewController;
     DistanceFilterTableViewController *distanceFilterTableViewController;
@@ -55,16 +53,12 @@
     privacySwitch.frame = CGRectMake(0, 0, 100, 44);
     [privacySwitch addTarget:self action:@selector(privacySwitch) forControlEvents:UIControlEventValueChanged];
     
-    flightTableViewController = [[FlightTableViewController alloc] init];
     categoryTableViewController = [[CategoryTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     intervalTableViewController = [[IntervalTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     distanceFilterTableViewController = [[DistanceFilterTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     accuracyTableViewController = [[AccuracyTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     addressTableViewController = [[AddressTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     versionTableViewController = [[VersionTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    
-    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:@selector(startCommutation) name:@"startCommutation" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -258,7 +252,7 @@
                 }else
                 {
                     cell.centerLabel.text = @"通勤を開始する";
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    cell.accessoryType = UITableViewCellAccessoryNone;
                 }
                 break;
             
@@ -407,7 +401,7 @@
         {
             case 0:
                 cell.textLabel.text = @"Husky";
-                cell.detailTextLabel.text = @"Version 1.0.5";
+                cell.detailTextLabel.text = @"Version 1.0.6";
                 cell.imageView.image = [UIImage imageNamed:@"husky.png"];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 //cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -462,7 +456,7 @@
                     }
                 }else
                 {
-                    [self.navigationController pushViewController:flightTableViewController animated:YES];
+                    [self showCommutationAlertView];
                 }
                 break;
                 
@@ -579,6 +573,72 @@
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil];
     [alert show];
+}
+
+- (void)showCommutationAlertView
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"便名を入力し、ショーアップ空港を選択してください" message:@"便名を指定しない場合は、ショーアップ空港のみを選択してください" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
+    {
+        textField.placeholder = @"JLを省いた数字4桁";
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+    }];
+    
+    // addActionした順に左から右にボタンが配置されます
+    [alertController addAction:[UIAlertAction actionWithTitle:@"HND" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+    {
+        // HNDボタンが押された時の処理
+        [[NSUserDefaults standardUserDefaults] setObject:@"HND" forKey:@"showup_airport"];
+        [[NSUserDefaults standardUserDefaults] setFloat:35.54705 forKey:@"showup_airport_lat"];
+        [[NSUserDefaults standardUserDefaults] setFloat:139.78535 forKey:@"showup_airport_lon"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self prepareForStartCommutation:alertController.textFields.firstObject.text];
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"NRT" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+    {
+        // NRTボタンが押された時の処理
+        [[NSUserDefaults standardUserDefaults] setObject:@"NRT" forKey:@"showup_airport"];
+        [[NSUserDefaults standardUserDefaults] setFloat:35.770432 forKey:@"showup_airport_lat"];
+        [[NSUserDefaults standardUserDefaults] setFloat:140.390295 forKey:@"showup_airport_lon"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self prepareForStartCommutation:alertController.textFields.firstObject.text];
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"キャンセル" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+    {
+                                    
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)prepareForStartCommutation:(NSString *)text
+{
+    if ([text isEqualToString:@""])
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:@"便名なし" forKey:@"flight"];
+    }else
+    {
+        NSString *flight = [NSString stringWithFormat:@"JL%@", text];
+        [[NSUserDefaults standardUserDefaults] setObject:flight forKey:@"flight"];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"distance"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self.tableView reloadData];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"通勤を開始します"
+                                                    message:@"ライセンス・パスポート・社員証は\nお持ちですか？\n気をつけて出社してください。"
+                                                   delegate:self cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil, nil];
+    [alert show];
+    
+    [self startCommutation];
 }
 
 - (void)startCommutation

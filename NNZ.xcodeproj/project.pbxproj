@@ -53,7 +53,6 @@
 		E3DAADE71A10ECD2002A792C /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADE61A10ECD2002A792C /* SettingTableViewController.m */; };
 		E3DAADE91A10FB2B002A792C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3DAADE81A10FB2B002A792C /* Settings.bundle */; };
 		E3DAADEC1A10FFEF002A792C /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADEB1A10FFEF002A792C /* XMLParser.m */; };
-		E3DAADEF1A110397002A792C /* FlightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADEE1A110397002A792C /* FlightTableViewController.m */; };
 		E3DAADF21A1195EE002A792C /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DAADF11A1195EE002A792C /* CategoryTableViewController.m */; };
 		E3DD46071A39470100E24152 /* yahoo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD46061A39470100E24152 /* yahoo@2x.png */; };
 		E3DD46091A394F4B00E24152 /* syutoko@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD46081A394F4B00E24152 /* syutoko@2x.png */; };
@@ -148,8 +147,6 @@
 		E3DAADE81A10FB2B002A792C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E3DAADEA1A10FFEF002A792C /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		E3DAADEB1A10FFEF002A792C /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
-		E3DAADED1A110397002A792C /* FlightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightTableViewController.h; sourceTree = "<group>"; };
-		E3DAADEE1A110397002A792C /* FlightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightTableViewController.m; sourceTree = "<group>"; };
 		E3DAADF01A1195EE002A792C /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
 		E3DAADF11A1195EE002A792C /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
 		E3DD46061A39470100E24152 /* yahoo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "yahoo@2x.png"; path = "../img/yahoo@2x.png"; sourceTree = "<group>"; };
@@ -324,8 +321,6 @@
 				E3DAADE61A10ECD2002A792C /* SettingTableViewController.m */,
 				E36960261A29E9A200DC654F /* SettingTableViewCell.h */,
 				E36960271A29E9A200DC654F /* SettingTableViewCell.m */,
-				E3DAADED1A110397002A792C /* FlightTableViewController.h */,
-				E3DAADEE1A110397002A792C /* FlightTableViewController.m */,
 				E3DAADF01A1195EE002A792C /* CategoryTableViewController.h */,
 				E3DAADF11A1195EE002A792C /* CategoryTableViewController.m */,
 				E3DAADDA1A10C2E8002A792C /* IntervalTableViewController.h */,
@@ -486,7 +481,6 @@
 				E3DAADE71A10ECD2002A792C /* SettingTableViewController.m in Sources */,
 				E3DAADDC1A10C2E8002A792C /* IntervalTableViewController.m in Sources */,
 				E33675F31A178EDC009E7642 /* MessageTableViewCell.m in Sources */,
-				E3DAADEF1A110397002A792C /* FlightTableViewController.m in Sources */,
 				E336760D1A1CD161009E7642 /* ThreadTableViewCell.m in Sources */,
 				E3BE08231A402EEE00B129F6 /* DistanceFilterTableViewController.m in Sources */,
 				E33675F91A197706009E7642 /* EmployeeNumberViewController.m in Sources */,
@@ -628,10 +622,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NNZ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.skyElements.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.skyElements.NNZ;
 				PRODUCT_NAME = NNZ;
 				PROVISIONING_PROFILE = "";
 			};
@@ -644,10 +638,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NNZ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.skyElements.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.skyElements.NNZ;
 				PRODUCT_NAME = NNZ;
 				PROVISIONING_PROFILE = "";
 			};
