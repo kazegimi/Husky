@@ -199,6 +199,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		44140CBE1FDFEA8F00CB3EB5 /* AnnotationView */ = {
+			isa = PBXGroup;
+			children = (
+				44140CB21FDFB4B900CB3EB5 /* CustomAnnotationView.h */,
+				44140CB31FDFB4B900CB3EB5 /* CustomAnnotationView.m */,
+				44140CB51FDFB4E400CB3EB5 /* AnnotationView.xib */,
+				44140CB71FDFBB4100CB3EB5 /* AnnotationView.h */,
+				44140CB81FDFBB4100CB3EB5 /* AnnotationView.m */,
+			);
+			name = AnnotationView;
+			sourceTree = "<group>";
+		};
+		44140CBF1FDFEAAB00CB3EB5 /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				44140CAD1FDF925800CB3EB5 /* Downloader.h */,
+				44140CAE1FDF925800CB3EB5 /* Downloader.m */,
+				E3BE080F1A3E892600B129F6 /* Uploader.h */,
+				E3BE08101A3E892700B129F6 /* Uploader.m */,
+				E3BE081B1A3F1BEE00B129F6 /* Deleter.h */,
+				E3BE081C1A3F1BEE00B129F6 /* Deleter.m */,
+			);
+			name = Connections;
+			sourceTree = "<group>";
+		};
 		E33675FA1A19770F009E7642 /* InitializeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,17 +320,8 @@
 				E3C1D3851A093BDD00A60692 /* AppDelegate.m */,
 				E3C1D38A1A093BDD00A60692 /* ViewController.h */,
 				E3C1D38B1A093BDD00A60692 /* ViewController.m */,
-				44140CB21FDFB4B900CB3EB5 /* CustomAnnotationView.h */,
-				44140CB31FDFB4B900CB3EB5 /* CustomAnnotationView.m */,
-				44140CB51FDFB4E400CB3EB5 /* AnnotationView.xib */,
-				44140CB71FDFBB4100CB3EB5 /* AnnotationView.h */,
-				44140CB81FDFBB4100CB3EB5 /* AnnotationView.m */,
-				44140CAD1FDF925800CB3EB5 /* Downloader.h */,
-				44140CAE1FDF925800CB3EB5 /* Downloader.m */,
-				E3BE080F1A3E892600B129F6 /* Uploader.h */,
-				E3BE08101A3E892700B129F6 /* Uploader.m */,
-				E3BE081B1A3F1BEE00B129F6 /* Deleter.h */,
-				E3BE081C1A3F1BEE00B129F6 /* Deleter.m */,
+				44140CBE1FDFEA8F00CB3EB5 /* AnnotationView */,
+				44140CBF1FDFEAAB00CB3EB5 /* Connections */,
 				E33675FA1A19770F009E7642 /* InitializeView */,
 				E3DAADE11A10D8CE002A792C /* FunctionView */,
 				E3DAADEA1A10FFEF002A792C /* XMLParser.h */,

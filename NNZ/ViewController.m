@@ -146,15 +146,15 @@
      */
     UIButton *hndFacetimeButton = [UIButton buttonWithType:UIButtonTypeSystem];
     hndFacetimeButton.frame = CGRectMake(0, 0, 375, 75);
-    [hndFacetimeButton setTitle:@"HND乗員サポート部(運用)" forState:UIControlStateNormal];
-    [hndFacetimeButton addTarget:self action:@selector(facetimeToHND) forControlEvents:UIControlEventTouchDown];
+    [hndFacetimeButton setTitle:@"📲 HND乗員サポート部(運用)" forState:UIControlStateNormal];
+    [hndFacetimeButton addTarget:self action:@selector(facetimeToHND) forControlEvents:UIControlEventTouchUpInside];
     [hndFacetimeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [filterViewController.view addSubview:hndFacetimeButton];
     
     UIButton *nrtFacetimeButton = [UIButton buttonWithType:UIButtonTypeSystem];
     nrtFacetimeButton.frame = CGRectMake(0, 75, 375, 75);
-    [nrtFacetimeButton setTitle:@"NRT乗員サポート部" forState:UIControlStateNormal];
-    [nrtFacetimeButton addTarget:self action:@selector(facetimeToNRT) forControlEvents:UIControlEventTouchDown];
+    [nrtFacetimeButton setTitle:@"📲 NRT乗員サポート部" forState:UIControlStateNormal];
+    [nrtFacetimeButton addTarget:self action:@selector(facetimeToNRT) forControlEvents:UIControlEventTouchUpInside];
     [nrtFacetimeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [filterViewController.view addSubview:nrtFacetimeButton];
     
@@ -618,7 +618,7 @@
      datasArray = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:nil];
-    NSLog(@"%@", datasArray);
+    //NSLog(@"%@", datasArray);
     
     if (datasArray.count == 0) return;
     
