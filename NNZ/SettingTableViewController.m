@@ -401,7 +401,7 @@
         {
             case 0:
                 cell.textLabel.text = @"Husky";
-                cell.detailTextLabel.text = @"Version 1.0.6";
+                cell.detailTextLabel.text = @"Version 1.0.7";
                 cell.imageView.image = [UIImage imageNamed:@"husky.png"];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 //cell.selectionStyle = UITableViewCellSelectionStyleNone;

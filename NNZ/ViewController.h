@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+
+#import "Downloader.h"
 #import "Uploader.h"
 #import "Deleter.h"
 
-@interface ViewController : UIViewController <UIWebViewDelegate, CLLocationManagerDelegate, UIPopoverControllerDelegate, UploaderDelegate, DeleterDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate, UIWebViewDelegate, CLLocationManagerDelegate, UIPopoverControllerDelegate, DownloaderDelegate, UploaderDelegate, DeleterDelegate>
 
 @property (nonatomic, retain) NSTimer *timer;
 

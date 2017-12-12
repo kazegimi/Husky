@@ -14,6 +14,8 @@
 
 #import "EmployeeNumberViewController.h"
 
+#import "CustomAnnotationView.h"
+
 @interface ViewController ()
 
 @end
@@ -23,9 +25,12 @@
     UIDevice *device;
     NSString *uuid;
     
-    UIWebView *mapWebView;
+    MKMapView *mapView;
+    //UIWebView *mapWebView;
     
     CLLocationManager *locationManager;
+    Downloader *downloader;
+    NSArray *datasArray;
     Uploader *uploader;
     Deleter *deleter;
     
@@ -73,20 +78,32 @@
     
     device.batteryMonitoringEnabled = YES;
     
+    mapView = [[MKMapView alloc] init];
+    mapView.delegate = self;
+    mapView.frame = self.view.frame;
+    mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:mapView];
+    
+    /*
     mapWebView = [[UIWebView alloc] init];
     mapWebView.delegate = self;
     mapWebView.frame = self.view.frame;
     mapWebView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     mapWebView.scalesPageToFit = YES;
     [self.view addSubview:mapWebView];
+     */
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.distanceFilter = 50.0f;
     locationManager.desiredAccuracy = 50.0f;
     locationManager.delegate = self;
     
+    downloader = [[Downloader alloc] init];
+    downloader.delegate = self;
+
     uploader = [[Uploader alloc] init];
     uploader.delegate = self;
+    
     deleter = [[Deleter alloc] init];
     deleter.delegate = self;
     
@@ -260,7 +277,7 @@
     
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [self connect];
+    //[self connect];
     
     [self resetTimer];
 }
@@ -284,7 +301,7 @@
         }
     }
 }
-
+/*
 - (void)connect
 {
     // URL指定
@@ -298,7 +315,8 @@
     // リクエスト送信
     [mapWebView loadRequest:request];
 }
-
+ */
+/*
 - (void)reConnect:(UILongPressGestureRecognizer *)gestureRecognizer
 {
     switch (gestureRecognizer.state)
@@ -321,31 +339,24 @@
             
     }
 }
-
-- (void)communicationsLayer:(UILongPressGestureRecognizer *)gestureRecognizer
-{
-    switch (gestureRecognizer.state)
-    {
-        case UIGestureRecognizerStateBegan:// 長押しを検知開始
-        {
+ */
+- (void)communicationsLayer:(UILongPressGestureRecognizer *)gestureRecognizer {
+    switch (gestureRecognizer.state) {
+        case UIGestureRecognizerStateBegan: {
             //[mapWebView stringByEvaluatingJavaScriptFromString:@"communucationsLayerOn();"];
         }
             break;
             
-        case UIGestureRecognizerStateEnded:// 長押し終了時
-        {
+        case UIGestureRecognizerStateEnded: {
             
         }
             break;
-            
         default:
             break;
-            
-    }
+        }
 }
 
-- (void)privacySwitch
-{
+- (void)privacySwitch {
     [locationManager stopUpdatingLocation];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"privacySwitch"])
@@ -381,16 +392,14 @@
         
         //NSDate *startTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"startTime"];
         //NSLog(@"%@", startTime);
-    }else
-    {
+    } else {
         [updateButton setBackgroundImage:[UIImage imageNamed:@"update.png"] forState:UIControlStateNormal];
         withUpdate = YES;
         [deleter deleteMarker];
     }
 }
 
-- (void)resetTimer
-{
+- (void)resetTimer {
     [activityIndicatorView stopAnimating];
     
     if ([self.timer isValid]) [self.timer invalidate];
@@ -398,12 +407,10 @@
     if (count > 0) [self countDown];
 }
 
-- (void)countDown
-{
+- (void)countDown {
     count--;
     
-    if (count == 0)
-    {
+    if (count == 0) {
         [self update];
         return;
     }
@@ -419,8 +426,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"employee_number"] || [[[NSUserDefaults standardUserDefaults] objectForKey:@"employee_number"] isEqualToString:@""])
-    {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"employee_number"] || [[[NSUserDefaults standardUserDefaults] objectForKey:@"employee_number"] isEqualToString:@""]) {
         employeeNumberViewController = [[EmployeeNumberViewController alloc] init];
         employeeNumberViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         employeeNumberViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -443,7 +449,7 @@
 - (void)textFieldDidChange
 {
     NSString *filter = [NSString stringWithFormat:@"filter('%@');", filterTextField.text];
-    [mapWebView stringByEvaluatingJavaScriptFromString:filter];
+    //[mapWebView stringByEvaluatingJavaScriptFromString:filter];
     
     if (![filterTextField.text isEqualToString:@""])
     {
@@ -462,7 +468,7 @@
     NSString *employee_number = notification.userInfo[@"properties"][@"employee_number"];
     
     NSString *panTo = [NSString stringWithFormat:@"panTo(%f, %f, '%@');", lat, lon, employee_number];
-    [mapWebView stringByEvaluatingJavaScriptFromString:panTo];
+    //[mapWebView stringByEvaluatingJavaScriptFromString:panTo];
     
     [listPopoverController dismissPopoverAnimated:YES];
 }
@@ -580,14 +586,66 @@
     withUpdate = NO;
 }
 
-- (void)update
-{
+- (void)update {
     if ([self.timer isValid]) [self.timer invalidate];
     
     [updateButton setTitle:@"" forState:UIControlStateNormal];
-    [mapWebView stringByEvaluatingJavaScriptFromString:@"update();"];
+    [downloader startDownloading];
     
     [self resetTimer];
+}
+
+- (void)didFinishDownloadingWithData:(NSData *)data {
+     datasArray = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:nil];
+    NSLog(@"%@", datasArray);
+    
+    NSMutableArray *annotationsArray = [NSMutableArray new];
+    for (int i = 0; i < datasArray.count; i++) {
+        NSDictionary *markerDictionary = datasArray[i];
+        double lat = [markerDictionary[@"geometry"][@"coordinates"][1] doubleValue];
+        double lon = [markerDictionary[@"geometry"][@"coordinates"][0] doubleValue];
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        annotation.coordinate = CLLocationCoordinate2DMake(lat, lon);
+        annotation.title = [NSString stringWithFormat:@"%d", i];// titleをtag代わりに利用
+        [annotationsArray addObject:annotation];
+    }
+    [mapView removeAnnotations: mapView.annotations];
+    [mapView addAnnotations:annotationsArray];
+}
+
+- (void)didFailDownloading {
+    
+}
+
+// AppleMaps
+- (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
+    [self update];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    static NSString * const identifier = @"Annotation";
+    
+    CustomAnnotationView *customAnnotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    customAnnotationView.centerOffset = CGPointMake(-customAnnotationView.annotationView.frame.size.width / 2, -customAnnotationView.annotationView.frame.size.height);
+    
+    NSDictionary *markerDictionary = datasArray[[annotation.title integerValue]];
+    customAnnotationView.annotationView.nameLabel.text = [NSString stringWithFormat:@"%@", markerDictionary[@"properties"][@"employee_number"]];
+    customAnnotationView.annotationView.flightLabel.text = [NSString stringWithFormat:@"%@", markerDictionary[@"properties"][@"flight"]];
+    customAnnotationView.annotationView.licenseLabel.text = [NSString stringWithFormat:@"%@", markerDictionary[@"properties"][@"license"]];
+    customAnnotationView.annotationView.destinationLabel.text = [NSString stringWithFormat:@"%@", markerDictionary[@"properties"][@"showup_airport"]];
+    NSString *timeStamp = markerDictionary[@"properties"][@"timestamp"];
+    customAnnotationView.annotationView.timeLabel.text = [NSString stringWithFormat:@"%@ JST", [timeStamp substringFromIndex:11]];
+    
+    return customAnnotationView;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    NSLog(@"Annotation!");
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44140CAC1FDF908400CB3EB5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44140CAB1FDF908400CB3EB5 /* MapKit.framework */; };
+		44140CAF1FDF925800CB3EB5 /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 44140CAE1FDF925800CB3EB5 /* Downloader.m */; };
+		44140CB41FDFB4B900CB3EB5 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44140CB31FDFB4B900CB3EB5 /* CustomAnnotationView.m */; };
+		44140CB61FDFB4E400CB3EB5 /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44140CB51FDFB4E400CB3EB5 /* AnnotationView.xib */; };
+		44140CB91FDFBB4100CB3EB5 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44140CB81FDFBB4100CB3EB5 /* AnnotationView.m */; };
+		44140CBB1FDFBE2600CB3EB5 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 44140CBA1FDFBE2600CB3EB5 /* marker.png */; };
 		E33675F01A1780AC009E7642 /* MessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33675EF1A1780AC009E7642 /* MessageTableViewController.m */; };
 		E33675F31A178EDC009E7642 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E33675F21A178EDC009E7642 /* MessageTableViewCell.m */; };
 		E33675F91A197706009E7642 /* EmployeeNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33675F81A197706009E7642 /* EmployeeNumberViewController.m */; };
@@ -70,6 +76,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44140CAB1FDF908400CB3EB5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		44140CAD1FDF925800CB3EB5 /* Downloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Downloader.h; sourceTree = "<group>"; };
+		44140CAE1FDF925800CB3EB5 /* Downloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Downloader.m; sourceTree = "<group>"; };
+		44140CB21FDFB4B900CB3EB5 /* CustomAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		44140CB31FDFB4B900CB3EB5 /* CustomAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
+		44140CB51FDFB4E400CB3EB5 /* AnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnotationView.xib; sourceTree = "<group>"; };
+		44140CB71FDFBB4100CB3EB5 /* AnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
+		44140CB81FDFBB4100CB3EB5 /* AnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
+		44140CBA1FDFBE2600CB3EB5 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = marker.png; path = img/marker.png; sourceTree = SOURCE_ROOT; };
 		E33675EE1A1780AC009E7642 /* MessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewController.h; sourceTree = "<group>"; };
 		E33675EF1A1780AC009E7642 /* MessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewController.m; sourceTree = "<group>"; };
 		E33675F11A178EDC009E7642 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
@@ -159,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44140CAC1FDF908400CB3EB5 /* MapKit.framework in Frameworks */,
 				E3DAADD61A10653E002A792C /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +189,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44140CAA1FDF908400CB3EB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44140CAB1FDF908400CB3EB5 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E33675FA1A19770F009E7642 /* InitializeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +247,7 @@
 		E39E3CF71A32054C002914C3 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				44140CBA1FDFBE2600CB3EB5 /* marker.png */,
 				E3AB031A1A81EAA90009EC83 /* husky.jpg */,
 				E3DD460A1A39551B00E24152 /* ihighway@2x.png */,
 				E3DD46081A394F4B00E24152 /* syutoko@2x.png */,
@@ -247,6 +272,7 @@
 				E3C1D37F1A093BDD00A60692 /* NNZ */,
 				E3C1D39C1A093BDD00A60692 /* NNZTests */,
 				E3C1D37E1A093BDD00A60692 /* Products */,
+				44140CAA1FDF908400CB3EB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,6 +292,13 @@
 				E3C1D3851A093BDD00A60692 /* AppDelegate.m */,
 				E3C1D38A1A093BDD00A60692 /* ViewController.h */,
 				E3C1D38B1A093BDD00A60692 /* ViewController.m */,
+				44140CB21FDFB4B900CB3EB5 /* CustomAnnotationView.h */,
+				44140CB31FDFB4B900CB3EB5 /* CustomAnnotationView.m */,
+				44140CB51FDFB4E400CB3EB5 /* AnnotationView.xib */,
+				44140CB71FDFBB4100CB3EB5 /* AnnotationView.h */,
+				44140CB81FDFBB4100CB3EB5 /* AnnotationView.m */,
+				44140CAD1FDF925800CB3EB5 /* Downloader.h */,
+				44140CAE1FDF925800CB3EB5 /* Downloader.m */,
 				E3BE080F1A3E892600B129F6 /* Uploader.h */,
 				E3BE08101A3E892700B129F6 /* Uploader.m */,
 				E3BE081B1A3F1BEE00B129F6 /* Deleter.h */,
@@ -393,7 +426,7 @@
 		E3C1D3751A093BDD00A60692 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = skyElements;
 				TargetAttributes = {
 					E3C1D37C1A093BDD00A60692 = {
@@ -441,10 +474,12 @@
 				E39E3CEE1A31FCF0002914C3 /* filter.png in Resources */,
 				E3C1D3911A093BDD00A60692 /* Images.xcassets in Resources */,
 				E3AB031B1A81EAA90009EC83 /* husky.jpg in Resources */,
+				44140CBB1FDFBE2600CB3EB5 /* marker.png in Resources */,
 				E3DD46091A394F4B00E24152 /* syutoko@2x.png in Resources */,
 				E39E3CF11A31FD93002914C3 /* update_blue.png in Resources */,
 				E39E3CDC1A31E55E002914C3 /* com.png in Resources */,
 				E39E3CF61A3201A1002914C3 /* husky.png in Resources */,
+				44140CB61FDFB4E400CB3EB5 /* AnnotationView.xib in Resources */,
 				E39E3CE81A31EBCC002914C3 /* list.png in Resources */,
 				E39E3CF21A31FD93002914C3 /* update.png in Resources */,
 				E3DAADE91A10FB2B002A792C /* Settings.bundle in Resources */,
@@ -467,10 +502,12 @@
 			files = (
 				E36960281A29E9A200DC654F /* SettingTableViewCell.m in Sources */,
 				E3BE08111A3E892700B129F6 /* Uploader.m in Sources */,
+				44140CB41FDFB4B900CB3EB5 /* CustomAnnotationView.m in Sources */,
 				E3BE08201A3FECE400B129F6 /* ListViewController.m in Sources */,
 				E33676101A1CDE4F009E7642 /* MessageView.m in Sources */,
 				E3DAADEC1A10FFEF002A792C /* XMLParser.m in Sources */,
 				E3C1D3861A093BDD00A60692 /* AppDelegate.m in Sources */,
+				44140CAF1FDF925800CB3EB5 /* Downloader.m in Sources */,
 				E3DAADDF1A10C2FF002A792C /* AccuracyTableViewController.m in Sources */,
 				E3BE08171A3EC26E00B129F6 /* DateStringGenerator.m in Sources */,
 				E33675F01A1780AC009E7642 /* MessageTableViewController.m in Sources */,
@@ -482,6 +519,7 @@
 				E3DAADDC1A10C2E8002A792C /* IntervalTableViewController.m in Sources */,
 				E33675F31A178EDC009E7642 /* MessageTableViewCell.m in Sources */,
 				E336760D1A1CD161009E7642 /* ThreadTableViewCell.m in Sources */,
+				44140CB91FDFBB4100CB3EB5 /* AnnotationView.m in Sources */,
 				E3BE08231A402EEE00B129F6 /* DistanceFilterTableViewController.m in Sources */,
 				E33675F91A197706009E7642 /* EmployeeNumberViewController.m in Sources */,
 				E3BE08641A54011C00B129F6 /* AddressTableViewController.m in Sources */,
@@ -544,13 +582,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -559,6 +605,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -587,13 +634,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -601,6 +656,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -625,7 +681,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.skyElements.NNZ;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jal.NNZ;
 				PRODUCT_NAME = NNZ;
 				PROVISIONING_PROFILE = "";
 			};
@@ -641,7 +697,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.skyElements.NNZ;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jal.NNZ;
 				PRODUCT_NAME = NNZ;
 				PROVISIONING_PROFILE = "";
 			};
