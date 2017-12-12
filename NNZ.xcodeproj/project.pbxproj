@@ -13,6 +13,7 @@
 		44140CB61FDFB4E400CB3EB5 /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44140CB51FDFB4E400CB3EB5 /* AnnotationView.xib */; };
 		44140CB91FDFBB4100CB3EB5 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44140CB81FDFBB4100CB3EB5 /* AnnotationView.m */; };
 		44140CBB1FDFBE2600CB3EB5 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 44140CBA1FDFBE2600CB3EB5 /* marker.png */; };
+		44140CBD1FDFDFFF00CB3EB5 /* facetime.png in Resources */ = {isa = PBXBuildFile; fileRef = 44140CBC1FDFDFFF00CB3EB5 /* facetime.png */; };
 		E33675F01A1780AC009E7642 /* MessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33675EF1A1780AC009E7642 /* MessageTableViewController.m */; };
 		E33675F31A178EDC009E7642 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E33675F21A178EDC009E7642 /* MessageTableViewCell.m */; };
 		E33675F91A197706009E7642 /* EmployeeNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E33675F81A197706009E7642 /* EmployeeNumberViewController.m */; };
@@ -85,6 +86,7 @@
 		44140CB71FDFBB4100CB3EB5 /* AnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
 		44140CB81FDFBB4100CB3EB5 /* AnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		44140CBA1FDFBE2600CB3EB5 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = marker.png; path = img/marker.png; sourceTree = SOURCE_ROOT; };
+		44140CBC1FDFDFFF00CB3EB5 /* facetime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facetime.png; path = img/facetime.png; sourceTree = SOURCE_ROOT; };
 		E33675EE1A1780AC009E7642 /* MessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewController.h; sourceTree = "<group>"; };
 		E33675EF1A1780AC009E7642 /* MessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewController.m; sourceTree = "<group>"; };
 		E33675F11A178EDC009E7642 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		E39E3CF71A32054C002914C3 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				44140CBC1FDFDFFF00CB3EB5 /* facetime.png */,
 				44140CBA1FDFBE2600CB3EB5 /* marker.png */,
 				E3AB031A1A81EAA90009EC83 /* husky.jpg */,
 				E3DD460A1A39551B00E24152 /* ihighway@2x.png */,
@@ -471,6 +474,7 @@
 				E39E3CD71A31A049002914C3 /* jal_logo.png in Resources */,
 				E39E3CDE1A31E55E002914C3 /* setting.png in Resources */,
 				E3DD460B1A39551B00E24152 /* ihighway@2x.png in Resources */,
+				44140CBD1FDFDFFF00CB3EB5 /* facetime.png in Resources */,
 				E39E3CEE1A31FCF0002914C3 /* filter.png in Resources */,
 				E3C1D3911A093BDD00A60692 /* Images.xcassets in Resources */,
 				E3AB031B1A81EAA90009EC83 /* husky.jpg in Resources */,

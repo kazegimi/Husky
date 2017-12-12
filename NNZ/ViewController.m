@@ -42,7 +42,7 @@
     
     UIButton *filterButton;
     UIViewController *filterViewController;
-    UITextField *filterTextField;
+    //UITextField *filterTextField;
     UIPopoverController *filterPopoverController;
     
     UIButton *updateButton;
@@ -127,20 +127,37 @@
     [self.view addSubview:functionView];
     
     filterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [filterButton setImage:[UIImage imageNamed:@"filter.png"] forState:UIControlStateNormal];
+    [filterButton setImage:[UIImage imageNamed:@"facetime.png"] forState:UIControlStateNormal];
     filterButton.frame = CGRectMake(0, 0, 75, 75);
     [filterButton addTarget:self action:@selector(openFilterView) forControlEvents:UIControlEventTouchDown];
     [filterButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [functionView addSubview:filterButton];
     
     filterViewController = [[UIViewController alloc] init];
-    filterViewController.preferredContentSize = CGSizeMake(375, 75);
+    filterViewController.preferredContentSize = CGSizeMake(375, 150);
+    // 検索機能をFaceTime機能に変更
+    /*
     filterTextField = [[UITextField alloc] init];
     filterTextField.frame = CGRectMake(10, 0, 355, 75);
     filterTextField.placeholder = @"検索";
     filterTextField.clearButtonMode = UITextFieldViewModeAlways;
     [filterTextField addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
     [filterViewController.view addSubview:filterTextField];
+     */
+    UIButton *hndFacetimeButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    hndFacetimeButton.frame = CGRectMake(0, 0, 375, 75);
+    [hndFacetimeButton setTitle:@"HND乗員サポート部(運用)" forState:UIControlStateNormal];
+    [hndFacetimeButton addTarget:self action:@selector(facetimeToHND) forControlEvents:UIControlEventTouchDown];
+    [hndFacetimeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [filterViewController.view addSubview:hndFacetimeButton];
+    
+    UIButton *nrtFacetimeButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    nrtFacetimeButton.frame = CGRectMake(0, 75, 375, 75);
+    [nrtFacetimeButton setTitle:@"NRT乗員サポート部" forState:UIControlStateNormal];
+    [nrtFacetimeButton addTarget:self action:@selector(facetimeToNRT) forControlEvents:UIControlEventTouchDown];
+    [nrtFacetimeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [filterViewController.view addSubview:nrtFacetimeButton];
+    
     filterPopoverController = [[UIPopoverController alloc] initWithContentViewController:filterViewController];
     filterPopoverController.delegate = self;
     
@@ -167,9 +184,11 @@
     [functionView addSubview:updateButton];
     
     //ボタンの長押し設定部分
+    /*
     UILongPressGestureRecognizer *updateButtonLongPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                                              action:@selector(reConnect:)];
     [updateButton addGestureRecognizer:updateButtonLongPress];
+     */
     
     if ([locationManager respondsToSelector:@selector(requestAlwaysAuthorization)])
     {
@@ -446,10 +465,11 @@
 }
 
 // filter
+/*
 - (void)textFieldDidChange
 {
     NSString *filter = [NSString stringWithFormat:@"filter('%@');", filterTextField.text];
-    //[mapWebView stringByEvaluatingJavaScriptFromString:filter];
+    [mapWebView stringByEvaluatingJavaScriptFromString:filter];
     
     if (![filterTextField.text isEqualToString:@""])
     {
@@ -459,16 +479,15 @@
         [filterButton setImage:[UIImage imageNamed:@"filter.png"] forState:UIControlStateNormal];
     }
 }
+ */
 
 // pan to marker
-- (void)panTo:(NSNotification *)notification
-{
+- (void)panTo:(NSNotification *)notification {
     float lat = [notification.userInfo[@"geometry"][@"coordinates"][1] floatValue];
     float lon = [notification.userInfo[@"geometry"][@"coordinates"][0] floatValue];
-    NSString *employee_number = notification.userInfo[@"properties"][@"employee_number"];
     
-    NSString *panTo = [NSString stringWithFormat:@"panTo(%f, %f, '%@');", lat, lon, employee_number];
-    //[mapWebView stringByEvaluatingJavaScriptFromString:panTo];
+    CLLocationCoordinate2D coodinate = CLLocationCoordinate2DMake(lat, lon);
+    [mapView setCenterCoordinate:coodinate animated:YES];
     
     [listPopoverController dismissPopoverAnimated:YES];
 }
@@ -601,6 +620,8 @@
                                                            error:nil];
     NSLog(@"%@", datasArray);
     
+    if (datasArray.count == 0) return;
+    
     NSMutableArray *annotationsArray = [NSMutableArray new];
     for (int i = 0; i < datasArray.count; i++) {
         NSDictionary *markerDictionary = datasArray[i];
@@ -642,6 +663,15 @@
     customAnnotationView.annotationView.timeLabel.text = [NSString stringWithFormat:@"%@ JST", [timeStamp substringFromIndex:11]];
     
     return customAnnotationView;
+}
+
+// FaceTime
+- (void)facetimeToHND {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"facetime-audio:fltcrew.skd@jal.com"]];
+}
+
+- (void)facetimeToNRT {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"facetime-audio:org.tyonnz_n.jali@jal.com"]];
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
