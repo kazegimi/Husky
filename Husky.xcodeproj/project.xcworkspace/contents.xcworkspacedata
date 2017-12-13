@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:NNZ.xcodeproj">
+      location = "self:/Users/eiichi/Documents/Xcode/NNZ/Husky.xcodeproj">
    </FileRef>
 </Workspace>

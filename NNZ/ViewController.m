@@ -615,6 +615,8 @@
 }
 
 - (void)didFinishDownloadingWithData:(NSData *)data {
+    [mapView removeAnnotations: mapView.annotations];
+    
      datasArray = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:nil];
@@ -632,7 +634,6 @@
         annotation.title = [NSString stringWithFormat:@"%d", i];// titleをtag代わりに利用
         [annotationsArray addObject:annotation];
     }
-    [mapView removeAnnotations: mapView.annotations];
     [mapView addAnnotations:annotationsArray];
 }
 

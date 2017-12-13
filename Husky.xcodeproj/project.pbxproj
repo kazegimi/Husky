@@ -87,6 +87,7 @@
 		44140CB81FDFBB4100CB3EB5 /* AnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		44140CBA1FDFBE2600CB3EB5 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = marker.png; path = img/marker.png; sourceTree = SOURCE_ROOT; };
 		44140CBC1FDFDFFF00CB3EB5 /* facetime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facetime.png; path = img/facetime.png; sourceTree = SOURCE_ROOT; };
+		44140CC01FE0062100CB3EB5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreLocation.framework; sourceTree = "<group>"; };
 		E33675EE1A1780AC009E7642 /* MessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewController.h; sourceTree = "<group>"; };
 		E33675EF1A1780AC009E7642 /* MessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewController.m; sourceTree = "<group>"; };
 		E33675F11A178EDC009E7642 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
@@ -137,7 +138,7 @@
 		E3BE08661A64B79C00B129F6 /* VersionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionTableViewController.m; sourceTree = "<group>"; };
 		E3BE086B1A65196A00B129F6 /* DescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionViewController.h; sourceTree = "<group>"; };
 		E3BE086C1A65196A00B129F6 /* DescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionViewController.m; sourceTree = "<group>"; };
-		E3C1D37D1A093BDD00A60692 /* NNZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C1D37D1A093BDD00A60692 /* Husky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Husky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C1D3811A093BDD00A60692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3C1D3821A093BDD00A60692 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E3C1D3841A093BDD00A60692 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -148,7 +149,7 @@
 		E3C1D38E1A093BDD00A60692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3C1D3901A093BDD00A60692 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E3C1D3931A093BDD00A60692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E3C1D3991A093BDD00A60692 /* NNZTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNZTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C1D3991A093BDD00A60692 /* HuskyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HuskyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C1D39E1A093BDD00A60692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3C1D39F1A093BDD00A60692 /* NNZTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNZTests.m; sourceTree = "<group>"; };
 		E3C1D3A91A0A4C4D00A60692 /* NNZ.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NNZ.plist; sourceTree = "<group>"; };
@@ -194,6 +195,7 @@
 		44140CAA1FDF908400CB3EB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44140CC01FE0062100CB3EB5 /* CoreLocation.framework */,
 				44140CAB1FDF908400CB3EB5 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -307,8 +309,8 @@
 		E3C1D37E1A093BDD00A60692 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E3C1D37D1A093BDD00A60692 /* NNZ.app */,
-				E3C1D3991A093BDD00A60692 /* NNZTests.xctest */,
+				E3C1D37D1A093BDD00A60692 /* Husky.app */,
+				E3C1D3991A093BDD00A60692 /* HuskyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,9 +406,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E3C1D37C1A093BDD00A60692 /* NNZ */ = {
+		E3C1D37C1A093BDD00A60692 /* Husky */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3C1D3A31A093BDD00A60692 /* Build configuration list for PBXNativeTarget "NNZ" */;
+			buildConfigurationList = E3C1D3A31A093BDD00A60692 /* Build configuration list for PBXNativeTarget "Husky" */;
 			buildPhases = (
 				E3C1D3791A093BDD00A60692 /* Sources */,
 				E3C1D37A1A093BDD00A60692 /* Frameworks */,
@@ -416,14 +418,14 @@
 			);
 			dependencies = (
 			);
-			name = NNZ;
+			name = Husky;
 			productName = NNZ;
-			productReference = E3C1D37D1A093BDD00A60692 /* NNZ.app */;
+			productReference = E3C1D37D1A093BDD00A60692 /* Husky.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E3C1D3981A093BDD00A60692 /* NNZTests */ = {
+		E3C1D3981A093BDD00A60692 /* HuskyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3C1D3A61A093BDD00A60692 /* Build configuration list for PBXNativeTarget "NNZTests" */;
+			buildConfigurationList = E3C1D3A61A093BDD00A60692 /* Build configuration list for PBXNativeTarget "HuskyTests" */;
 			buildPhases = (
 				E3C1D3951A093BDD00A60692 /* Sources */,
 				E3C1D3961A093BDD00A60692 /* Frameworks */,
@@ -434,9 +436,9 @@
 			dependencies = (
 				E3C1D39B1A093BDD00A60692 /* PBXTargetDependency */,
 			);
-			name = NNZTests;
+			name = HuskyTests;
 			productName = NNZTests;
-			productReference = E3C1D3991A093BDD00A60692 /* NNZTests.xctest */;
+			productReference = E3C1D3991A093BDD00A60692 /* HuskyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -458,7 +460,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E3C1D3781A093BDD00A60692 /* Build configuration list for PBXProject "NNZ" */;
+			buildConfigurationList = E3C1D3781A093BDD00A60692 /* Build configuration list for PBXProject "Husky" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -471,8 +473,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E3C1D37C1A093BDD00A60692 /* NNZ */,
-				E3C1D3981A093BDD00A60692 /* NNZTests */,
+				E3C1D37C1A093BDD00A60692 /* Husky */,
+				E3C1D3981A093BDD00A60692 /* HuskyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -569,7 +571,7 @@
 /* Begin PBXTargetDependency section */
 		E3C1D39B1A093BDD00A60692 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E3C1D37C1A093BDD00A60692 /* NNZ */;
+			target = E3C1D37C1A093BDD00A60692 /* Husky */;
 			targetProxy = E3C1D39A1A093BDD00A60692 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -702,7 +704,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jal.NNZ;
-				PRODUCT_NAME = NNZ;
+				PRODUCT_NAME = Husky;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -718,7 +720,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jal.NNZ;
-				PRODUCT_NAME = NNZ;
+				PRODUCT_NAME = Husky;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -738,8 +740,8 @@
 				INFOPLIST_FILE = NNZTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.skyElements.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = NNZTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NNZ.app/NNZ";
+				PRODUCT_NAME = HuskyTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Husky.app/Husky";
 			};
 			name = Debug;
 		};
@@ -754,15 +756,15 @@
 				INFOPLIST_FILE = NNZTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.skyElements.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = NNZTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NNZ.app/NNZ";
+				PRODUCT_NAME = HuskyTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Husky.app/Husky";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E3C1D3781A093BDD00A60692 /* Build configuration list for PBXProject "NNZ" */ = {
+		E3C1D3781A093BDD00A60692 /* Build configuration list for PBXProject "Husky" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3C1D3A11A093BDD00A60692 /* Debug */,
@@ -771,7 +773,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3C1D3A31A093BDD00A60692 /* Build configuration list for PBXNativeTarget "NNZ" */ = {
+		E3C1D3A31A093BDD00A60692 /* Build configuration list for PBXNativeTarget "Husky" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3C1D3A41A093BDD00A60692 /* Debug */,
@@ -780,7 +782,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3C1D3A61A093BDD00A60692 /* Build configuration list for PBXNativeTarget "NNZTests" */ = {
+		E3C1D3A61A093BDD00A60692 /* Build configuration list for PBXNativeTarget "HuskyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3C1D3A71A093BDD00A60692 /* Debug */,
