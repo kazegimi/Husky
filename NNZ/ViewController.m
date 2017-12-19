@@ -620,13 +620,16 @@
      datasArray = [NSJSONSerialization JSONObjectWithData:data
                                                          options:kNilOptions
                                                            error:nil];
-    //NSLog(@"%@", datasArray);
+    NSLog(@"%@", datasArray);
     
     if (datasArray.count == 0) return;
     
     NSMutableArray *annotationsArray = [NSMutableArray new];
     for (int i = 0; i < datasArray.count; i++) {
         NSDictionary *markerDictionary = datasArray[i];
+        if ([markerDictionary[@"properties"][@"license"] isEqualToString:@"管理者"]) {
+            continue;
+        }
         double lat = [markerDictionary[@"geometry"][@"coordinates"][1] doubleValue];
         double lon = [markerDictionary[@"geometry"][@"coordinates"][0] doubleValue];
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
