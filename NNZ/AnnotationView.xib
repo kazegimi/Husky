@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker.png" translatesAutoresizingMaskIntoConstraints="NO" id="qB9-6B-de5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qB9-6B-de5">
                     <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:34:56" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRf-Zl-PcQ">
@@ -75,6 +75,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="annotationImageView" destination="qB9-6B-de5" id="eMZ-cV-KII"/>
                 <outlet property="destinationLabel" destination="eO4-WJ-sYV" id="NMC-YU-oE3"/>
                 <outlet property="flightLabel" destination="g9f-mS-RKd" id="UMb-qb-W2j"/>
                 <outlet property="licenseLabel" destination="AMU-hS-k3j" id="6Ur-oS-0Nr"/>
@@ -84,7 +85,4 @@
             <point key="canvasLocation" x="37" y="36"/>
         </view>
     </objects>
-    <resources>
-        <image name="marker.png" width="200" height="320"/>
-    </resources>
 </document>

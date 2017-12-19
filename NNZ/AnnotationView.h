@@ -10,6 +10,7 @@
 
 @interface AnnotationView : UIView
 
+@property (weak, nonatomic) IBOutlet UIImageView *annotationImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *licenseLabel;

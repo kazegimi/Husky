@@ -659,6 +659,26 @@
     customAnnotationView.centerOffset = CGPointMake(-customAnnotationView.annotationView.frame.size.width / 2, -customAnnotationView.annotationView.frame.size.height);
     
     NSDictionary *markerDictionary = datasArray[[annotation.title integerValue]];
+    if ([markerDictionary[@"properties"][@"license"] isEqualToString:@"787機長"] ||
+        [markerDictionary[@"properties"][@"license"] isEqualToString:@"787副操縦士"]) {
+        customAnnotationView.annotationView.annotationImageView.tintColor = [UIColor colorWithRed:56/255.0 green:142/255.0 blue:60/255.0 alpha:1.0];// Green
+        [customAnnotationView changeTextColorWithColor:[UIColor whiteColor]];
+    } else if ([markerDictionary[@"properties"][@"license"] isEqualToString:@"777機長"] ||
+               [markerDictionary[@"properties"][@"license"] isEqualToString:@"777副操縦士"]) {
+        customAnnotationView.annotationView.annotationImageView.tintColor = [UIColor colorWithRed:211/255.0 green:47/255.0 blue:47/255.0 alpha:1.0];// Red
+        [customAnnotationView changeTextColorWithColor:[UIColor whiteColor]];
+    } else if ([markerDictionary[@"properties"][@"license"] isEqualToString:@"767機長"] ||
+               [markerDictionary[@"properties"][@"license"] isEqualToString:@"767副操縦士"]) {
+        customAnnotationView.annotationView.annotationImageView.tintColor = [UIColor colorWithRed:245/255.0 green:124/255.0 blue:0/255.0 alpha:1.0];// Orange
+        [customAnnotationView changeTextColorWithColor:[UIColor whiteColor]];
+    } else if ([markerDictionary[@"properties"][@"license"] isEqualToString:@"737機長"] ||
+               [markerDictionary[@"properties"][@"license"] isEqualToString:@"737副操縦士"]) {
+        customAnnotationView.annotationView.annotationImageView.tintColor = [UIColor colorWithRed:3/255.0 green:169/255.0 blue:244/255.0 alpha:1.0];// Blue
+        [customAnnotationView changeTextColorWithColor:[UIColor whiteColor]];
+    } else {
+        customAnnotationView.annotationView.annotationImageView.tintColor = [UIColor colorWithRed:97/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];// Gray
+        [customAnnotationView changeTextColorWithColor:[UIColor whiteColor]];
+    }
     customAnnotationView.annotationView.nameLabel.text = [NSString stringWithFormat:@"%@", markerDictionary[@"properties"][@"employee_number"]];
     customAnnotationView.annotationView.flightLabel.text = [NSString stringWithFormat:@"%@", markerDictionary[@"properties"][@"flight"]];
     customAnnotationView.annotationView.licenseLabel.text = [NSString stringWithFormat:@"%@", markerDictionary[@"properties"][@"license"]];

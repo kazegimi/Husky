@@ -14,9 +14,20 @@
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self != nil) {
         _annotationView = [[[NSBundle mainBundle] loadNibNamed:@"AnnotationView" owner:self options:nil] objectAtIndex:0];
+        UIImage *image = [UIImage imageNamed:@"marker.png"];
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        _annotationView.annotationImageView.image = image;
         [self addSubview:_annotationView];
     }
     return self;
+}
+
+- (void)changeTextColorWithColor:(UIColor *)color  {
+    _annotationView.nameLabel.textColor = color;
+    _annotationView.flightLabel.textColor = color;
+    _annotationView.licenseLabel.textColor = color;
+    _annotationView.destinationLabel.textColor = color;
+    _annotationView.timeLabel.textColor = color;
 }
 
 @end

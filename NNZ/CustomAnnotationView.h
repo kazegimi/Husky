@@ -14,4 +14,6 @@
 
 @property (nonatomic) AnnotationView *annotationView;
 
+- (void)changeTextColorWithColor:(UIColor *)color;
+
 @end
